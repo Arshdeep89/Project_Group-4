@@ -2,6 +2,7 @@
  * SYST 17796 Project Base code.
  * Students can modify and extend to implement their game.
  * Add your name as an author and the date!
+ * Name: Arshdeep Singh
  */
 package ca.sheridancollege.project;
 
@@ -12,6 +13,7 @@ import java.util.ArrayList;
  * given.
  *
  */
+
 public abstract class Game {
 
     private final String name;//the title of the game
@@ -53,4 +55,4 @@ public abstract class Game {
      */
     public abstract void declareWinner();
 
-}//end class
+}
