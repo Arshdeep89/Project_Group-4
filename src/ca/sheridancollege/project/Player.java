@@ -6,6 +6,11 @@
  */
 package ca.sheridancollege.project;
 
+
+/**
+ * Player class adhering to Single Responsibility and Encapsulation principles.
+ */
+
 import java.util.ArrayList;
 
 public class Player {
@@ -22,7 +27,8 @@ public class Player {
     public String getName() {
         return name;
     }
-
+    
+    
     public void addCard(Card card) {
         hand.add(card);
     }

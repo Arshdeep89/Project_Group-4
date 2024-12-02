@@ -4,6 +4,11 @@
  */
 package ca.sheridancollege.project;
 
+/**
+ * Go Fish Game implementing the Template Method Pattern for game flow.
+ * Design Pattern: Template Method
+ */
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -27,11 +32,7 @@ public class GoFishGame extends Game {
         System.out.println("\n=== Starting Go Fish Game! ===\n");
 
         // Shuufles the initial cards to every player
-        for (Player player : getPlayers()) {
-            for (int i = 0; i < 7; i++) {
-                player.addCard(deck.drawCard());
-            }
-        }
+        distributeCards();
 
         // Main game loop
         while (!isGameOver()) {
@@ -48,11 +49,18 @@ public class GoFishGame extends Game {
 
         declareWinner();
     }
-
+    
+    private void distributeCards() {
+        for (Player player : getPlayers()) {
+            for (int i = 0; i < 7; i++) {
+                player.addCard(deck.drawCard());
+            }
+        }
+    }
+    
     private void takeTurn(Player currentPlayer) {
         System.out.println("Your hand: " + currentPlayer.getHand());
-        System.out.print("Ask for a rank: ");
-        String rank = scanner.nextLine();
+        String rank = askForRank(currentPlayer);
     
         Player targetPlayer = selectOpponent(currentPlayer);
         System.out.println(currentPlayer.getName() + " asks " + targetPlayer.getName() + " for " + rank);
@@ -92,7 +100,11 @@ public class GoFishGame extends Game {
         }
     }
     
-
+    private String askForRank(Player player) {
+        System.out.print(player.getName() + ", enter rank: ");
+        return scanner.nextLine();
+    }
+    
     private Player selectOpponent(Player currentPlayer) {
         ArrayList<Player> opponents = new ArrayList<>(getPlayers());
         opponents.remove(currentPlayer);

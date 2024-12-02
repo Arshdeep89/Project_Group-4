@@ -12,6 +12,11 @@ package ca.sheridancollege.project;
  * Students wishing to add to the code should remember to add themselves as a modifier.
  *
  */
+
+/*
+ * Card class using encapsulation to represent a card's rank and suit.
+ * Design Principle: Encapsulation
+ */
 public class Card {
     private final String rank;
     private final String suit;

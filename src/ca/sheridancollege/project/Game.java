@@ -13,6 +13,9 @@ import java.util.ArrayList;
  * given.
  *
  */
+/**
+ * Abstract Game class follows the Dependency Inversion Principle.
+ */
 
 public abstract class Game {
 
@@ -21,7 +24,7 @@ public abstract class Game {
 
     public Game(String name) {
         this.name = name;
-        players = new ArrayList();
+        players = new ArrayList<>();
     }
 
     /**

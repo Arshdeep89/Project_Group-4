@@ -4,6 +4,10 @@
  */
 package ca.sheridancollege.project;
 
+/**
+ * Deck class implementing the Factory Pattern to create card objects.
+ * Design Pattern: Factory Pattern
+ */
 import java.util.ArrayList;
 import java.util.Collections;
 
@@ -17,7 +21,7 @@ public class Deck {
 
         for (String suit : suits) {
             for (String rank : ranks) {
-                cards.add(new Card(rank, suit));
+                cards.add(CardFactory.createCard(rank, suit)); // Factory Pattern applied here
             }
         }
         shuffle();
